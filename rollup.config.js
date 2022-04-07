@@ -20,7 +20,7 @@ export default {
 					{
 						targets: '> 0%',
 						useBuiltIns: 'usage',
-						corejs: '3.19',
+						corejs: '3.21',
 						spec: true
 					},
 				],
