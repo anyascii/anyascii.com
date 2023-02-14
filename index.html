@@ -2,26 +2,49 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>AnyAscii: Unicode to ASCII Transliteration</title>
+	<title>AnyAscii - Unicode to ASCII Transliteration</title>
 	<meta name="description" content="Converts Unicode characters to their best ASCII representation">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="style.css">
-	<link rel="icon" type="image/png" href="/favicon.png">
+	<link rel="icon" type="image/png" href="favicon.png">
+	<link rel="canonical" href="https://anyascii.com">
 	<script defer src="index.js"></script>
 	<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "27411d224107456b9911ac6b2b12d40c"}'></script>
 	<meta name="application-name" content="AnyAscii">
 	<meta name="author" content="hunterwb">
+	<style>
+		body {
+			background-color: #fafafa;
+			font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+			line-height: 1.5;
+			text-align: center;
+		}
+
+		#textareas {
+			display: flex;
+			justify-content: center;
+			align-content: space-around;
+			flex-wrap: wrap;
+		}
+
+		textarea {
+			resize: none;
+			margin: 0.5em;
+			flex-grow: 1;
+			min-width: 20em;
+			max-width: 40em;
+			height: 14em;
+			padding: 0.5em;
+			font-family: inherit;
+			font-size: inherit;
+			line-height: inherit;
+		}
+	</style>
 </head>
 <body>
-	<main>
-		<div id="textareas" lang="">
-			<textarea id="input" placeholder="input" autofocus></textarea>
-			<textarea id="output" placeholder="output" readonly></textarea>
-		</div>
-		<div class="txt">
-			<p>AnyAscii: Unicode to ASCII transliteration. Converts Unicode characters to their best ASCII representation.</p>
-			<p><a href="https://github.com/anyascii/anyascii">github.com/anyascii/anyascii</a></p>
-		</div>
-	</main>
+	<div id="textareas" lang="">
+		<textarea id="input" placeholder="input" autofocus></textarea>
+		<textarea id="output" placeholder="output" readonly></textarea>
+	</div>
+	<div>AnyAscii: Unicode to ASCII transliteration. Converts Unicode characters to their best ASCII representation.<br><a href="https://github.com/anyascii/anyascii">https://github.com/anyascii/anyascii</a></div>
 </body>
 </html>
