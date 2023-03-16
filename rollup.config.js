@@ -1,30 +1,33 @@
-import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import { babel } from '@rollup/plugin-babel';
 
 export default {
-	context: 'this',
 	input: 'main.js',
 	output: {
 		file: 'index.js'
 	},
 	plugins: [
+		nodeResolve(),
 		commonjs(),
-		nodeResolve({ browser: true }),
 		babel({
-			babelHelpers: 'inline',
-			exclude: [/core-js/],
+			babelHelpers: 'runtime',
+			exclude: /core-js/,
+			targets: '> 0%',
 			presets: [
 				[
-					'@babel/preset-env',
-					{
-						targets: '> 0%',
-						useBuiltIns: 'usage',
-						corejs: '3.21',
-						spec: true
-					},
-				],
+					'@babel/preset-env', {}
+				]
 			],
+			plugins: [
+				[
+					'@babel/plugin-transform-runtime',
+					{
+						corejs: 3,
+						version: '7.21.0'
+					}
+				]
+			]
 		})
 	]
 };
