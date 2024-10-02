@@ -47,5 +47,12 @@
 		<textarea id="output" placeholder="output" readonly></textarea>
 	</div>
 	<div>AnyAscii: Unicode to ASCII transliteration. Converts Unicode characters to their best ASCII representation.<br><a href="https://github.com/anyascii/anyascii">https://github.com/anyascii/anyascii</a></div>
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', function() {
+				navigator.serviceWorker.register('/service-worker.js');
+			});
+		}
+	</script>
 </body>
 </html>
