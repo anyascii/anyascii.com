@@ -5,14 +5,15 @@ self.addEventListener('install', event => {
 		caches.open(CACHE_NAME).then(cache => {
 			return cache.addAll([
 				'/',
-				'/index.js',
+				'/index.js'
 			]);
-		}),
+		})
 	);
 });
 
 self.addEventListener('fetch', event => {
-	if (event.request.url.startsWith(self.location.origin)) {
+	const url = new URL(event.request.url);
+	if (url.origin === self.location.origin) {
 		event.respondWith(
 			caches.open(CACHE_NAME).then(cache => {
 				return cache.match(event.request, {ignoreSearch: true}).then(response => {
@@ -22,7 +23,7 @@ self.addEventListener('fetch', event => {
 						return response;
 					});
 				});
-			}),
+			})
 		);
 	}
 });
