@@ -2,10 +2,10 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "any-ascii": "0.3.2"
+    "any-ascii": "0.3.3"
   },
   "devDependencies": {
-    "esbuild": "0.24.0"
+    "esbuild": "0.25.5"
   },
   "scripts": {
     "build": "esbuild main.js --bundle --outfile=index.js"
